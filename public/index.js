@@ -38,7 +38,6 @@ submitButton.addEventListener('click', async () => {
     } else {
         console.log(response);
         console.log("upload has failed");
-        console.log;
         uploadStatusTag.textContent = "Upload Failed";
         uploadStatusTag.style.color = "red";
 
@@ -46,26 +45,6 @@ submitButton.addEventListener('click', async () => {
 
 })
 
-let deleteButton = document.getElementById('delete');
+let displayPageButton = document.getElementById('add-button');
 
-deleteButton.addEventListener('click', async () => {
-   let response = await fetch('http://localhost:5000/delete_nameless_data', {
-        method: "delete",
-    });
-    // console.log(response);
-
-    let parsedData = await response.json()
-    console.log(parsedData);
-});
-
-
-
-let displayPageButton = document.getElementById('display-page-button');
-
-displayPageButton.addEventListener('click', (event) => {
-    let id = event.target.databaseId
-    // change HTML files (from index to display_food.html)
-    window.location.href = "./display_food"
-    // window.location.href = "./display_food?idOfClickedItem=63cd54377099d7e530cbb428"
-    // example of dynamic: `./display_food?idOfClickedItem=${id}`
-})
+displayPageButton.addEventListener('click', (getData))

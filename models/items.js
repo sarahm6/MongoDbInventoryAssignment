@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const myItemsSchema = new mongoose.newSchema ({
-    price: 2.00,
-    inventory: 700,
+    price: Number,
+    inventory: Number,
     nextDelivery: new Date(),
-    deliveryAmt: 200,
-    name: "Toy Car"
+    deliveryAmt: Number,
+    name: String
     }
 )
 
